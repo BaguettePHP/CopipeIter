@@ -15,7 +15,7 @@ I do not claim the right for this project.  This project is licensed under [WTFP
 $data = [1, 2, 3];
 $twice = function ($n) { return $n * 2 };
 
-foreach (map($data, $twice) => $a) {
+foreach (map($data, $twice) as $a) {
     echo $a, PHP_EOL;
 }
 // [output] 2, 4, 6
