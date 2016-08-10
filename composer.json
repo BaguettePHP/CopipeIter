@@ -1,0 +1,11 @@
+{
+    "name": "baguette/copipe-iter",
+    "description": "Most simple iterators",
+    "license": "WTFPL",
+    "autoload": {
+        "files": ["src/functions"]
+    },
+    "require": {
+        "php": ">=5.5.0"
+    }
+}
