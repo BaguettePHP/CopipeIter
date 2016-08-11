@@ -3,7 +3,7 @@
     "description": "Most simple iterators",
     "license": "WTFPL",
     "autoload": {
-        "files": ["src/functions.php"]
+        "files": ["src/copipe-iter.php"]
     },
     "require": {
         "php": ">=5.5.0"
