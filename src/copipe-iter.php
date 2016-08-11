@@ -52,8 +52,8 @@ function to_array($iter)
 function take($iter, $n)
 {
     $i = 0;
-    foreach ($iter as $x) {
+    foreach ($iter as $k => $x) {
         if ($n <= $i++) { return; }
-        yield $x;
+        yield $k => $x;
     }
 }
