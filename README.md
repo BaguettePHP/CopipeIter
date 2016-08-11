@@ -1,6 +1,11 @@
 Copipe Iter
 ===========
 
+[![Package version](http://img.shields.io/packagist/v/baguette/copipe-iter.svg?style=flat)](https://packagist.org/packages/baguette/copipe-iter)
+[![Build Status](https://travis-ci.org/BaguettePHP/CopipeIter.svg?branch=master)](https://travis-ci.org/BaguettePHP/CopipeIter)
+[![Packagist](http://img.shields.io/packagist/dt/baguette/copipe-iter.svg?style=flat)](https://packagist.org/packages/baguette/copipe-iter)
+[![Coverage Status](https://coveralls.io/repos/BaguettePHP/CopipeIter/badge.svg)](https://coveralls.io/r/BaguettePHP/CopipeIter)
+
 Most simple iterators.
 
 I do not claim the right for this project.  This package is licensed under [WTFPL](http://www.wtfpl.net/).
