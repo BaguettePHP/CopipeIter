@@ -3,13 +3,11 @@ Copipe Iter
 
 Most simple iterators.
 
-I do not claim the right for this project.  This project is licensed under [WTFPL](http://www.wtfpl.net/).
+I do not claim the right for this project.  This package is licensed under [WTFPL](http://www.wtfpl.net/).
 
 ## API
 
 ### `Generator map(iterable $iter, callable $callback)`
-
-#### sample
 
 ```php
 $data = [1, 2, 3];
@@ -22,8 +20,6 @@ foreach (map($data, $twice) as $a) {
 ```
 
 ### `Generator map_kv(iterable $iter, callable $callback)`
-
-#### sample
 
 ```php
 $data = ['apple', 'orange', 'strawberry'];
@@ -47,8 +43,6 @@ foreach (take($data, 5) as $a) {
 ```
 
 ### `array to_array(iterable $iter)`
-
-#### sample
 
 ```php
 $fib = function () {
