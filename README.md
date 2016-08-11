@@ -11,7 +11,7 @@ I do not claim the right for this project.  This package is licensed under [WTFP
 
 ```php
 $data = [1, 2, 3];
-$twice = function ($n) { return $n * 2 };
+$twice = function ($n) { return $n * 2; };
 
 foreach (map($data, $twice) as $a) {
     echo $a, PHP_EOL;
