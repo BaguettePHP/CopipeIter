@@ -53,7 +53,7 @@ function take($iter, $n)
 {
     $i = 0;
     foreach ($iter as $k => $x) {
-        if ($n <= $i++) { return; }
+        if ($n <= $i++) { break; }
         yield $k => $x;
     }
 }
