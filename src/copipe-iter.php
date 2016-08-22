@@ -57,3 +57,20 @@ function take($iter, $n)
         yield $k => $x;
     }
 }
+
+/**
+ * @param  iterable|array|\Traversable $iter
+ * @param  int                         $start
+ * @param  int                         $len
+ * @return \Generator
+ */
+function slice($iter, $start, $len = INF)
+{
+    $i = 0;
+    foreach ($iter as $k => $x) {
+        if ($i >= $start + $len) { break; }
+        if ($i++ >= $start) {
+            yield $k => $x;
+        }
+    }
+}
