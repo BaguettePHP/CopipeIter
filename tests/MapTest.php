@@ -12,7 +12,7 @@ final class MapTest extends \PHPUnit_Framework_TestCase
      */
     public function test_Array($expected, array $input)
     {
-        $twice = function ($n) { return $n * 2; };
+        $twice = function ($n) { return is_numeric($n) ? ($n * 2) : 0; };
 
         $actual = [];
         foreach (map($input, $twice) as $k => $v) {
@@ -53,7 +53,7 @@ final class MapTest extends \PHPUnit_Framework_TestCase
      */
     public function test_Generator($expected, callable $input)
     {
-        $twice = function ($n) { return $n * 2; };
+        $twice = function ($n) { return is_numeric($n) ? ($n * 2) : 0; };
 
         $generator = $input();
         $this->assertInstanceOf('\Generator', $generator);
