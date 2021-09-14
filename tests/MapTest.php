@@ -2,10 +2,12 @@
 
 namespace Baguette\iter;
 
+use PHPUnit\Framework\TestCase;
+
 /**
  * @license WTFPL
  */
-final class MapTest extends \PHPUnit_Framework_TestCase
+final class MapTest extends TestCase
 {
     /**
      * @dataProvider for_Array
