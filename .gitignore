@@ -5,6 +5,8 @@
 /composer.lock
 /phpunit.xml
 /.phpunit.result.cache
-/vendor/*
 /.idea
 /*.iml
+vendor/
+composer.lock
+infection.log

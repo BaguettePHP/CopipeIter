@@ -10,5 +10,19 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8.35 || ^5.7.20 || ^9.5"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "bamarni-bin": {
+            "target-directory": "tools"
+        }
+    },
+    "scripts": {
+        "phan": "phan",
+        "psalm": "psalm",
+	"stan": "phpstan analyse",
+	"test": "phpunit"
     }
 }
