@@ -22,6 +22,7 @@
     "scripts": {
         "phan": "phan",
         "psalm": "psalm",
+        "psalm-strict": "psalm --show-info=true",
 	"stan": "phpstan analyse",
 	"test": "phpunit"
     }
