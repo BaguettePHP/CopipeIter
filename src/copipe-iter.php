@@ -3,9 +3,13 @@
 namespace Baguette\iter;
 
 /**
- * @param  iterable|array|\Traversable $iter
- * @param  callable                    $callback
- * @return \Generator
+ * @template K
+ * @template V
+ * @template T
+ * @param array|\Traversable $iter
+ * @phpstan-param iterable<K,V> $iter
+ * @phpstan-param callable(V):T $callback
+ * @return \Generator<K,T>
  */
 function map($iter, callable $callback)
 {
@@ -15,9 +19,13 @@ function map($iter, callable $callback)
 }
 
 /**
- * @param  iterable|array|\Traversable $iter
- * @param  callable                    $callback
- * @return \Generator
+ * @template K
+ * @template V
+ * @template T
+ * @param array|\Traversable $iter
+ * @phpstan-param iterable<K,V> $iter
+ * @phpstan-param callable(K,V):T $callback
+ * @return \Generator<K,T>
  */
 function map_kv($iter, callable $callback)
 {
@@ -27,8 +35,11 @@ function map_kv($iter, callable $callback)
 }
 
 /**
- * @param  iterable|array|\Traversable $iter
- * @return array
+ * @template K of array-key
+ * @template V
+ * @param array|\Traversable $iter
+ * @phpstan-param iterable<K,V> $iter
+ * @return array<K,V>
  */
 function to_array($iter)
 {
@@ -45,9 +56,13 @@ function to_array($iter)
 }
 
 /**
- * @param  iterable|array|\Traversable $iter
- * @param  int                         $n
- * @return \Generator
+ * @template K
+ * @template V
+ * @param array|\Traversable $iter
+ * @phpstan-param iterable<K,V> $iter
+ * @param int $n
+ * @phpstan-param positive-int $n
+ * @return \Generator<K,V>
  */
 function take($iter, $n)
 {
@@ -59,10 +74,15 @@ function take($iter, $n)
 }
 
 /**
- * @param  iterable|array|\Traversable $iter
- * @param  int                         $start
- * @param  int                         $len
- * @return \Generator
+ * @template K
+ * @template V
+ * @param array|\Traversable $iter
+ * @phpstan-param iterable<K,V> $iter
+ * @param int $start
+ * @phphstan-param positive-int $start
+ * @param int|float $len
+ * @phphstan-param positive-int|float $len
+ * @return \Generator<K,V>
  */
 function slice($iter, $start, $len = INF)
 {
