@@ -35,7 +35,7 @@ function map_kv($iter, callable $callback)
 }
 
 /**
- * @template K of array-key
+ * @template K
  * @template V
  * @param array|\Traversable $iter
  * @phpstan-param iterable<K,V> $iter
