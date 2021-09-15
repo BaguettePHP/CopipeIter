@@ -11,8 +11,11 @@ final class MapkvTest extends TestCase
 {
     /**
      * @dataProvider for_Array
+     * @param array<mixed> $expected
+     * @param array<mixed> $input
+     * @return void
      */
-    public function test_Array($expected, array $input)
+    public function test_Array(array $expected, array $input)
     {
         $kv_pair = function ($k, $v) { return [$k, $v]; };
 
@@ -24,6 +27,9 @@ final class MapkvTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
+    /**
+     * @phpstan-return list<array{expected:array<mixed>,input:array<mixed>}>
+     */
     public function for_Array()
     {
         return [
@@ -56,6 +62,11 @@ final class MapkvTest extends TestCase
 
     /**
      * @dataProvider for_Generator
+     * @template K
+     * @template V
+     * @phpstan-param array<K,V> $expected
+     * @phpstan-param callable():\Generator<K,V> $input
+     * @return void
      */
     public function test_Generator($expected, callable $input)
     {
@@ -72,12 +83,20 @@ final class MapkvTest extends TestCase
         $this->assertEquals($expected, $actual);
     }
 
+    /**
+     * @phpstan-return list<array{expected:array<mixed>,input:\Generator<mixed>}>
+     */
     public function for_Generator()
     {
         return [
             [
                 'expected' => [],
-                'input'    => function () { return; yield; },
+                'input' => function () {
+                    return;
+                    // @phpstan-ignore-next-line
+                    yield;
+                },
+
             ],
             [
                 'expected' => [

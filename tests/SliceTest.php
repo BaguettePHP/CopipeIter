@@ -11,6 +11,9 @@ final class SliceTest extends TestCase
 {
     /**
      * @dataProvider for_Array
+     * @param array<mixed> $expected
+     * @param array<mixed> $input
+     * @return void
      */
     public function test_Array($expected, array $input)
     {
@@ -26,6 +29,9 @@ final class SliceTest extends TestCase
         $this->assertEquals(array_slice($input, 2, null, true), $results);
     }
 
+    /**
+     * @phpstan-return list<array{expected:array<mixed>,input:array<mixed>}>
+     */
     public function for_Array()
     {
         return [
@@ -52,8 +58,13 @@ final class SliceTest extends TestCase
 
     /**
      * @dataProvider for_Generator
+     * @template K
+     * @template V
+     * @phpstan-param array<K,V> $expected
+     * @phpstan-param callable():\Generator<K,V> $input
+     * @return void
      */
-    public function test_Generator($expected, callable $input)
+    public function test_Generator(array $expected, callable $input)
     {
         $generator = $input();
         $this->assertInstanceOf('\Generator', $generator);
@@ -69,12 +80,20 @@ final class SliceTest extends TestCase
         $this->assertEquals($expected, $results);
     }
 
+    /**
+     * @phpstan-return list<array{expected:array<mixed>,input:\Generator<mixed>}>
+     */
     public function for_Generator()
     {
         return [
             [
                 'expected' => [],
-                'input'    => function () { return; yield; },
+                'input' => function () {
+                    return;
+                    // @phpstan-ignore-next-line
+                    yield;
+                },
+
             ],
             [
                 'expected' => [2 => 3],
